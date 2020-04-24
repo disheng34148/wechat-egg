@@ -43,7 +43,7 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
 
-  const onerror = {
+  config.onerror = {
     json(err, ctx) {
       ctx.body = {
         code: 9999,
@@ -53,7 +53,7 @@ module.exports = appInfo => {
       ctx.status = 500;
     },
   }
-
+  
   return {
     ...config,
     ...userConfig,

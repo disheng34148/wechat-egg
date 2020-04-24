@@ -8,7 +8,14 @@ class WechatController extends Controller {
         const { ctx } = this;
         try {
             const url = ctx.request.query.url;
-            if(!url) return;
+            if(!url) {
+                ctx.body = {
+                    code: 0,
+                    data: '',
+                    msg: 'url参数为空'
+                }
+                return;
+            }
             const { wechatAppId, wechatDebug } = this.config;
             const ticket = await ctx.service.jsapiTicket.get();
             let config = sign(ticket, url);
