@@ -12,7 +12,6 @@ class WechatController extends Controller {
             const { wechatAppId, wechatDebug } = this.config;
             const ticket = await ctx.service.jsapiTicket.get();
             let config = sign(ticket, url);
-            console.log(config)
             sign.appId = wechatAppId;
             sign.debug = wechatDebug;
             delete sign.jsapi_ticket;
