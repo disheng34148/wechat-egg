@@ -6,6 +6,7 @@ const sign = require('../util/sign.js');
 class WechatController extends Controller {
     async index() {
         const { ctx } = this;
+        const { allowUrl } = this.config;
         try {
             const url = ctx.request.query.url;
             if(!url) {
@@ -13,6 +14,14 @@ class WechatController extends Controller {
                     code: 0,
                     data: '',
                     msg: 'url参数为空'
+                }
+                return;
+            }
+            if(!url.includes(allowUrl)) {
+                ctx.body = {
+                    code: 0,
+                    data: '',
+                    msg: '不安全的域名'
                 }
                 return;
             }

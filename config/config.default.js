@@ -14,7 +14,11 @@ module.exports = appInfo => {
     wechatDebug: true,
     wechatBaseUrl: 'https://api.weixin.qq.com/cgi-bin/',
     wechatAppId: 'wxf87dbe690bc1c3c2',
-    wechatAppSecret: 'cfddfb5e61b4a8c7a63d0dcc51a2395e'
+    wechatAppSecret: 'cfddfb5e61b4a8c7a63d0dcc51a2395e',
+    allowUrl: [
+      'https://cimu34148.cn',
+      'http://cimu34148.cn'
+    ]
   };
 
   config.redis = {
