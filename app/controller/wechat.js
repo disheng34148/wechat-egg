@@ -4,7 +4,7 @@ const Controller = require('egg').Controller;
 const sign = require('../util/sign.js');
 
 class WechatController extends Controller {
-    async index() {
+    async wechatConfig() {
         const { ctx } = this;
         const { allowUrl } = this.config;
         try {

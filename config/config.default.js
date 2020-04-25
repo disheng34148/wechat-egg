@@ -16,8 +16,8 @@ module.exports = appInfo => {
     wechatAppId: 'wxf87dbe690bc1c3c2',
     wechatAppSecret: 'cfddfb5e61b4a8c7a63d0dcc51a2395e',
     allowUrl: [
-      'https://cimu34148.cn',
-      'http://cimu34148.cn'
+      'https://www.cimu34148.cn',
+      'http://www.cimu34148.cn'
     ]
   };
 
@@ -28,6 +28,20 @@ module.exports = appInfo => {
       password: '',
       db: 0,
     },
+  }
+
+  config.mysql = {
+    client: {
+      host: '106.52.56.220',
+      // 端口号
+      port: '3306',
+      // 用户名
+      user: 'root',
+      // 密码
+      password: '34148@react.COM',
+      // 数据库名
+      database: 'wechat'
+    }
   }
 
   config.alinode = {
