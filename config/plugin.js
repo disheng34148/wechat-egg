@@ -11,3 +11,8 @@ exports.alinode = {
   package: 'egg-alinode',
   env: ['prod']
 }
+
+exports.mysql = {
+  enable: true,
+  package: 'egg-mysql'
+}
