@@ -17,7 +17,7 @@ class WechatController extends Controller {
                 }
                 return;
             }
-            if(!url.includes(allowUrl)) {
+            if(!allowUrl.includes(url)) {
                 ctx.body = {
                     code: 0,
                     data: '',
