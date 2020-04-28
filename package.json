@@ -13,7 +13,7 @@
     "egg-redis": "^2.4.0",
     "egg-scripts": "^2.13.0",
     "egg-socket.io": "^4.1.6",
-    "jssha": "^1.6.3"
+    "jssha": "1.6.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -29,6 +29,7 @@
   },
   "scripts": {
     "start": "egg-scripts start --daemon --title=egg-server-wechat-egg",
+    "pro": "egg-scripts start --daemon --title=egg-server-wechat-egg --https.key=/etc/nginx/cert/2_cimu34148.cn.key --https.cert=/etc/nginx/cert/1_cimu34148.cn_bundle.crt",
     "stop": "egg-scripts stop --title=egg-server-wechat-egg",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
