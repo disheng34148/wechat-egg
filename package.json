@@ -28,7 +28,7 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-wechat-egg --https.key=/etc/nginx/cert/2_cimu34148.cn.key --https.cert=/etc/nginx/cert/1_cimu34148.cn_bundle.crt",
+    "start": "egg-scripts start --daemon --title=egg-server-wechat-egg --https.key=cert/2_cimu34148.cn.key --https.cert=cert/1_cimu34148.cn_bundle.crt",
     "stop": "egg-scripts stop --title=egg-server-wechat-egg",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
