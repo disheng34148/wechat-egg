@@ -21,7 +21,7 @@ class WechatController extends Controller {
                 ctx.body = {
                     code: 0,
                     data: '',
-                    msg: '不安全的域名'
+                    msg: '无权限'
                 }
                 return;
             }
@@ -31,6 +31,8 @@ class WechatController extends Controller {
             config.appId = wechatAppId;
             config.debug = wechatDebug;
             delete config.jsapi_ticket;
+            delete config.appId;
+            delete config.debug;
             ctx.body = {
                 code: 200,
                 data: config,
@@ -45,9 +47,9 @@ class WechatController extends Controller {
         }
     }
 
-    async wechatUser(openid) {
+    async wechatUser(code) {
         const { ctx } = this;
-        const insertResult = await ctx.service.wechat.insertUser(openid);
+        const insertResult = await ctx.service.wechat.insertUser(code);
         ctx.body = {
             code: insertResult ? 200 : 0,
             data: '',
