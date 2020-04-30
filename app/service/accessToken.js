@@ -3,14 +3,9 @@ const Service = require('egg').Service;
 class AccessTokenService extends Service {
     async getFromWechat() {
         const { wechatBaseUrl, wechatAppId, wechatAppSecret } = this.config;
-        // const { data: {access_token} } = await this.ctx.curl(`${wechatBaseUrl}token?grant_type=client_credential&appid=${wechatAppId}&secret=${wechatAppSecret}`, {
-        //     dataType: 'json'
-        // });
-        // console.log(access_token)
-        const result = await this.ctx.curl(`${wechatBaseUrl}token?grant_type=client_credential&appid=${wechatAppId}&secret=${wechatAppSecret}`, {
+        const { data: {access_token} } = await this.ctx.curl(`${wechatBaseUrl}token?grant_type=client_credential&appid=${wechatAppId}&secret=${wechatAppSecret}`, {
             dataType: 'json'
         });
-        console.log(result)
         await this.app.redis.set('accessToken', access_token, 'Ex', 7200);
         return access_token;
     }
