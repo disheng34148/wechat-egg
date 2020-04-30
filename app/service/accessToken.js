@@ -6,7 +6,9 @@ class AccessTokenService extends Service {
         const { data: {access_token} } = await this.ctx.curl(`${wechatBaseUrl}token?grant_type=client_credential&appid=${wechatAppId}&secret=${wechatAppSecret}`, {
             dataType: 'json'
         });
+        console.log(access_token)
         await this.app.redis.set('accessToken', access_token, 'Ex', 7200);
+        console.log(access_token)
         return access_token;
     }
 

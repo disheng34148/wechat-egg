@@ -44,6 +44,16 @@ class WechatController extends Controller {
             }
         }
     }
+
+    async wechatUser(openid) {
+        const { ctx } = this;
+        const insertResult = await ctx.service.wechat.insertUser(openid);
+        ctx.body = {
+            code: insertResult ? 200 : 0,
+            data: '',
+            msg: insertResult ? 'success' : insertResult
+        }
+    }
 }
 
 module.exports = WechatController;
