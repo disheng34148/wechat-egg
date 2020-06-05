@@ -30,6 +30,11 @@ module.exports = appInfo => {
     },
   }
 
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
+  }
+
   config.mysql = {
     client: {
       host: '106.52.56.220',
