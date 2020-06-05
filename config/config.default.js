@@ -13,8 +13,8 @@ module.exports = appInfo => {
   const config = exports = {
     wechatDebug: true,
     wechatBaseUrl: 'https://api.weixin.qq.com/cgi-bin/',
-    wechatAppId: 'wxf87dbe690bc1c3c2',
-    wechatAppSecret: 'cfddfb5e61b4a8c7a63d0dcc51a2395e',
+    wechatAppId: 'wx81a49c26071369d8',
+    wechatAppSecret: 'f3548d8cbf7269dd61bb96a7cf20a61a',
     allowUrl: [
       'https://www.cimu34148.cn',
       'http://www.cimu34148.cn'
