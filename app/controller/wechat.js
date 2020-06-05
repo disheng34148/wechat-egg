@@ -17,14 +17,14 @@ class WechatController extends Controller {
                 }
                 return;
             }
-            if(!allowUrl.includes(url)) {
-                ctx.body = {
-                    code: 0,
-                    data: '',
-                    msg: '无权限'
-                }
-                return;
-            }
+            // if(!allowUrl.includes(url)) {
+            //     ctx.body = {
+            //         code: 0,
+            //         data: '',
+            //         msg: '无权限'
+            //     }
+            //     return;
+            // }
             const { wechatAppId, wechatDebug } = this.config;
             const ticket = await ctx.service.jsapiTicket.get();
             let config = sign(ticket, url);
