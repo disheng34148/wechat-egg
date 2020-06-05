@@ -31,7 +31,6 @@ class WechatController extends Controller {
             config.appId = wechatAppId;
             config.debug = wechatDebug;
             delete config.jsapi_ticket;
-            delete config.appId;
             delete config.debug;
             ctx.body = {
                 code: 200,
